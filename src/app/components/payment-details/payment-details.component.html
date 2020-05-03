@@ -1,0 +1,58 @@
+<div class="col-md- mx-auto">
+  <div class="card rounded-0 text-primary">
+      <div class="card-header text-center">
+          <h3 class="card-title text-primary">Payment Details</h3>
+          <p></p>
+          <img src="../src/assets/images/payment/ecocash.png" class="sub-img"/>
+      </div>
+
+      <div class="card-body">
+          <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" #loginForm="ngForm"
+              (ngSubmit)="onLoginFormSubmit(loginForm.value)">
+              <div class="form-group">
+                  <label for="username">Enter your phone number</label>
+
+                  <input type="text" ngModel="" #emailField="ngModel" name="email" class="form-control form-control-lg rounded-0"
+                      required="required">
+
+                  <div class="form-error" *ngIf="emailField.touched && !emailField.valid">
+                      <div *ngIf="emailField.errors.required">Email is required</div>
+
+                      <div *ngIf="emailField.errors.email && !emailField.errors.required">Invalid email
+                          address</div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label>Enter your ID number</label>
+
+                  <input type="text" ngModel="" #password="ngModel" minlength="4" name="password" class="form-control form-control-lg rounded-0"
+                      required="required" autocomplete="new-password">
+
+                  <div class="form-error" *ngIf="password.touched && !password.valid">
+                      <div *ngIf="password.errors.required">Password is required</div>
+
+                      <div *ngIf="password.errors.minlength">
+                          Password must be at least 4 characters long.
+                      </div>
+                  </div>
+              </div>
+
+              <div class="control">
+                  <button type="submit" [disabled]="loginForm.invalid" class="btn large-btn btn-rounded btn-outline-info float-none">Submit</button>
+              </div>
+          </form>
+
+          <br>
+
+          <p>Please confirm the message sent to your mobile phone number you entered and enter your PIN to complete payment.</p>
+
+          <p class="textcolor">PLEASE PRESENT THE NUMBER YOU ENTERED HERE FOR YOUR DELIVERY TO BE HANDED OVER.</p>
+
+      </div>
+
+      <!-- /card-block -->
+  </div>
+
+  <!-- /form card login -->
+</div>

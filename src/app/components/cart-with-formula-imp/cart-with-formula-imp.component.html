@@ -1,0 +1,63 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark white darken-4">
+  <mdb-navbar-brand>
+    <div class="cart text-center">
+      <a href="signed" class="navbar-brand text-primary"><strong>CART</strong></a>
+      <img src="../src/assets/images/shops/cart.png" class="logo-img">
+    </div>
+  </mdb-navbar-brand>
+</mdb-navbar>
+
+<table id="myTable" class="table table-stripe">
+  <!-- <tr> <th>ShopName</th></tr> -->
+  <tr *ngFor = "let cart of cartDetails">
+  <td> <h3><strong> {{cart.shopName}} </strong> </h3> 
+
+    <!-- <tr> <th>Products</th></tr> -->
+    <tr *ngFor = "let f of cart.productCommodity">
+      <td>
+        {{f.name}} @ {{f.price}} each<br> <br>
+        Quantity: {{f.quantity}} 
+        &nbsp;
+        <button mdbBtn type="button" (click)="onIncreaseQuantity(f)" color="success" rounded="true" outline="true"
+            class="waves-light fa fa-plus" mdbWavesEffect></button>
+        &nbsp;
+        <button mdbBtn type="button" (click)="onDecreaseQuantity(f)" color="success" rounded="true" outline="true"
+            class="waves-light fa fa-minus" mdbWavesEffect></button>
+        <br><br>
+        Subtotal: {{f.price * f.quantity}} <br><br>
+        
+        <button mdbBtn type="button" (click)="onClearItem(f)" color="primary" rounded="true" outline="true"
+        class="waves-light noprint" mdbWavesEffect>Clear Item</button>
+        <br>
+        <br>
+
+      </td>
+    </tr>
+
+    <h3><strong> {{cart.shopName}}'s Total: {{cart.shopTotalString}} </strong></h3>
+
+  </td>
+</tr>
+</table>
+
+<div *ngIf="cartDetails">
+  <!-- {{ getGrandTotal() }} -->
+  <h3><strong> Grand Total: {{ getGrandGrandTotal() }}  </strong></h3>
+</div>
+
+<br>
+
+<div *ngIf="cartDetails">
+      <div class="clear-btn-pos">
+        <button mdbBtn type="button" (click)="onClearCart()" color="primary" rounded="true" outline="true"
+          class="waves-light noprint float-left" mdbWavesEffect>Clear Cart</button>
+      </div>
+
+          <!-- <br><br> -->
+
+      <div class="check-out-btn-pos">
+        <button mdbBtn type="button" (click)="onCheckOut()" color="success" rounded="true" outline="true"
+          class="waves-light large large-btn solid noprint float-right" mdbWavesEffect>Check Out</button>
+      </div>
+</div>
+<br><br><br><br>

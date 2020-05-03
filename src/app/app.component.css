@@ -1,0 +1,16 @@
+.navbar-nav{
+    margin-left: 15em;
+}
+
+.nav-item{
+    margin-left: 1em;
+}
+
+.nav-link.active{
+    background: #0000002e;
+    border-radius: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+

@@ -1,0 +1,74 @@
+<!-- <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green darken-4">
+    <mdb-navbar-brand>
+        <a href="signed" class="navbar-brand">GREENS</a>
+        <img src="../src/assets/images/shops/greens.png" class="logo-img">
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="about" routerLinkActive="active">About Greens</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="contact" routerLinkActive="active">Contact Greens</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="products" routerLinkActive="active">Products</a>
+            </li>
+            <li class="far-right">
+                <a class="far-right" mdbWavesEffect > THENGA TENGA BUY </a>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar> -->
+
+<header class="topbar">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+      <div class="navbar-header">
+        <div class="row text-primary" style="display: inline-block;">
+          <a class="navbar-brand text-white" href="#">
+            <b> &nbsp; &nbsp; &nbsp; &nbsp;
+              <img src="../src/assets/images/shops/greens.png" length="45" width="45" alt="homepage" class="dark-logo logo-img"/>
+              &nbsp; &nbsp;
+            </b>
+            <strong>GREENS</strong>
+          </a>
+        </div>
+      </div>
+  
+      <!-- <div class="float-right">
+        <links>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/about" routerLinkActive="active">
+                About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/contact" routerLinkActive="active">
+                Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/getting-started" routerLinkActive="active">
+                Getting Started</a>
+            </li>
+          </ul>
+        </links>
+      </div> -->
+
+      <div class="navbar-collapse">
+        <app-navigation2 class="w-100"></app-navigation2>
+      </div>
+  
+      <div class="navbar-collapse">
+        <app-navigation class="w-100" (toggleSidebar)="toggleSidebar()"></app-navigation>
+      </div>
+  
+  
+    </nav>
+  </header>
+
+  <br>
+
+<router-outlet>
+</router-outlet>

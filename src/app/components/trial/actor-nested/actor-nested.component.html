@@ -1,0 +1,67 @@
+<div class="row">
+  <div class=" col-md-4" style="text-align: center;">
+    <span bgcolor="#FF80FF"> <h1> Nested Json Nested NgFor </h1> </span>
+  
+    <!-- <table id="myTable" class="table table-stripe">
+      <tr bgcolor="#FF0000"> <th>Index</th> <th>Name</th> <th>DOB</th> <th>Films</th></tr>
+      <tr bgcolor="#FFCCCC" *ngFor = "let actor of actors; let i = index">
+      <td>{{i}}</td>
+      <td>{{actor.name}}</td>
+      <td>{{actor.dob}}</td>
+      <td bgcolor="#ADEBAD">
+        <ul>
+          <li *ngFor = "let f of actor.filmography"> {{f.name}} &nbsp; &nbsp;  @ {{f.year}}</li>
+        </ul>
+      </td>
+    </tr>
+    </table> -->
+  
+    <!-- <table id="myTable" class="table table-stripe">
+      <tr> <th>ShopName</th>  <th>Products</th></tr>
+      <tr *ngFor = "let actor of cart">
+      <td>{{actor.shopName}}</td>
+      <td>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor = "let f of actor.productCommodity"> {{f.name}} &nbsp; &nbsp;  @ {{f.price}} &nbsp; &nbsp; Quantity: {{f.quantity}} </li>
+        </ul>
+      </td>
+    </tr>
+    </table> -->
+  
+    <table id="myTable" class="table table-stripe">
+      <!-- <tr> <th>ShopName</th></tr> -->
+      <tr *ngFor = "let actor of cart">
+      <td>{{actor.shopName}}
+  
+        <!-- <tr> <th>Products</th></tr> -->
+        <tr *ngFor = "let f of actor.productCommodity">
+          <td>
+            {{f.name}} @ {{f.price}} each<br> <br>
+            Quantity: {{f.quantity}} 
+            &nbsp;
+            <button mdbBtn type="button" (click)="onIncreaseQuantity(cart)" color="success" rounded="true" outline="true"
+                class="waves-light fa fa-plus" mdbWavesEffect></button>
+            &nbsp;
+            <button mdbBtn type="button" (click)="onDecreaseQuantity(cart.index)" color="success" rounded="true" outline="true"
+                class="waves-light fa fa-minus" mdbWavesEffect></button>
+            <br><br>
+            Subtotal: {{f.price * f.quantity}} <br><br>
+            
+            <button mdbBtn type="button" (click)="onClearItem($event)" color="primary" rounded="true" outline="true"
+            class="waves-light noprint" mdbWavesEffect>Clear Item</button>
+            <br>
+            <br>
+  
+          </td>
+        </tr>
+
+        <br>
+
+        {{actor.shopName}}'s Total: {{actor.shopTotal}}
+  
+      </td>
+    </tr>
+    </table>
+  
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row">
+  <app-table-view *ngIf = "!isSelected" class="col-md-6" search="'true'" [data]="tableData" [entries]="25" [title]="'Product Categories'"
+      search="'true'" (itemClick)="itemClick($event)">
+  </app-table-view>
+
+  <app-table-view *ngIf = "isSelected && !selected" class="col-md-4" search="'true'" [data]="tableData2" [entries]="25" [title]="'Product Categories'"
+      search="'true'" (itemClick)="itemClick($event)">
+  </app-table-view>
+
+  <app-table-view-sub *ngIf = "isSelected" class="col-md-4" search="'true'" back="'true'" [data]="tableData3" [entries]="25" [title]="subTitle"
+  search="'true'" (itemClick)="itemClick3($event)" (backClick)="tableBackClick($event)">
+  </app-table-view-sub>
+
+  <app-form-view [buttons]="false" [btnLeft]="btnLeft" [form]="selected" [title]="formViewTitle" class="col-4" back="'true'" [imageUrl]="imageUrl"
+  *ngIf="!isAdd && selected" [headers]="tableData4.headers" (edit)="editClick($event)" (onaction)="addToCart($event)"
+  (delete)="deleteClick($event)" (backClick)="formBackClick($event)"></app-form-view>
+
+  <app-cart class="col-4" *ngIf="!isAdd && selected" [isReload]="isReload"></app-cart>
+
+</div>

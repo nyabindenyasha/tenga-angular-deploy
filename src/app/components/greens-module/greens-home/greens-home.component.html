@@ -1,0 +1,28 @@
+<div class="row">
+    <app-table-view *ngIf = "!isSelected" class="col-md-6" search="'true'" [data]="tableData" [entries]="25" [title]="'Product Categories'"
+        search="'true'" (itemClick)="itemClick($event)">
+    </app-table-view>
+
+    <app-table-view *ngIf = "isSelected && !selected" class="col-md-4" search="'true'" [data]="tableData2" [entries]="25" [title]="'Product Categories'"
+        search="'true'" (itemClick)="itemClick($event)">
+    </app-table-view>
+
+    <app-table-view-sub *ngIf = "isSelected" class="col-md-4" search="'true'" back="'true'" [data]="tableData3" [entries]="25" [title]="subTitle"
+    search="'true'" (itemClick)="itemClick3($event)" (backClick)="tableBackClick($event)">
+    </app-table-view-sub>
+
+    <app-form-view [buttons]="false" [btnLeft]="btnLeft" [form]="selected" [title]="formViewTitle" class="col-4" back="'true'" [imageUrl]="imageUrl"
+    *ngIf="!isAdd && selected && !isCheckout && !isPayment && !isTransactionSuccessful" [headers]="tableData4.headers" (edit)="editClick($event)" (onaction)="addToCart($event)"
+    (delete)="deleteClick($event)" (backClick)="formBackClick($event)"></app-form-view>
+
+    <app-cart-with-formula-imp class="col-4" *ngIf="!isAdd && selected" [isReload]="isReload" (checkOutClick)="checkOutClick($event)"></app-cart-with-formula-imp>
+
+    <app-payment-method class="col-4" *ngIf="!isAdd && selected && isCheckout" (paymentMethodClick)="paymentMethodClick($event)"></app-payment-method>
+
+    <app-payment-details class="col-4" *ngIf="!isAdd && selected && isPayment" (paymentDetailsClick)="paymentDetailsClick($event)"></app-payment-details>
+
+    <!-- <app-cart-view class="col-4" *ngIf="!isAdd && selected" (checkOutClick)="checkOutClick($event)"></app-cart-view> -->
+
+    <app-transaction-successful class="col-4" *ngIf="!isAdd && selected && isTransactionSuccessful" (transactionSuccessfulClick)="transactionSuccessfulClick($event)"></app-transaction-successful>
+ 
+</div>

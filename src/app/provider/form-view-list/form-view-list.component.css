@@ -1,0 +1,11 @@
+.list-group-item{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 2px;
+}
+
+.sub-img {
+    width: 10rem;
+    height: 8rem;
+}

@@ -1,0 +1,35 @@
+<div class="col-md-8 offset-2 file-upload">
+  <br/>
+  <div class="card">
+    <br/>
+    <form class="center form-group">
+      <div class="center">
+        <h5>
+          <b>{{document.name}}</b>
+        </h5>
+        <hr/>
+        <img class="thumbnail" [src]="fileUrl" alt="File">
+      </div>
+      <br/>
+      <label type="label" title="No file chosen" class="btn-upload">Select a file
+        <input style="display: none;" type="file" name="file" #filesInput (change)="handleFileInput($event.target.files)" accept="application/pdf">
+      </label>
+      <button type="button" class = "btn-upload" (click)="uploadFile();">Upload</button>
+      <br/>
+      <ng-container>
+        <small *ngIf="FileToUpload">
+          <em>{{filename}}</em>
+        </small>
+      </ng-container>
+      <br/>
+      <br/>
+      <div *ngIf="upload" class="progress-bar" [style.background-color]="isfileUploaded? '#006064': '#E65100'">
+        <small>
+          <em> {{isfileUploaded? 'File uploaded': 'File not uploaded'}}
+            <i [ngClass]="{'ion-checkmark-circled':isfileUploaded, 'ion-close-circled':!isfileUploaded }"></i>
+          </em>
+        </small>
+      </div>
+    </form>
+  </div>
+</div>

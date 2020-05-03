@@ -1,0 +1,55 @@
+.center {
+    text-align: center;
+    color: #0d47a0;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+label {
+    display: inline-block;
+     margin-bottom: 0; 
+}
+
+.btn-upload {
+    cursor: pointer;
+    border: none;
+    outline: none !important;
+    background-color: #0d47a0;
+    color: #fff;
+    padding: 5px 15px;
+    margin: 2px;
+    min-width: 91.33px;
+    border-radius: 3px !important;
+    transition: all ease 0.3s;
+    font-size: 12px;  
+}
+.btn-upload:hover {
+    background-color: #A4AEB2;
+    color: #fff;
+}
+
+.card{
+    border: 1px solid #0d47a0;
+    background-color: #fff;
+}
+
+form > .progress-bar {
+    position: inherit;
+    padding: 6px;
+    width: 100%;
+    z-index: 1;
+    transition: background-color ease 0.2s;
+}
+.thumbnail{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+    max-height: 100px;
+    max-width: 100%;
+}

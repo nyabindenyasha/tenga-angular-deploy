@@ -1,0 +1,54 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark white darken-4">
+  <mdb-navbar-brand>
+    <div class="cart text-center">
+      <a href="signed" class="navbar-brand text-primary"><strong>CART</strong></a>
+      <img src="../src/assets/images/shops/cart.png" class="logo-img">
+    </div>
+  </mdb-navbar-brand>
+</mdb-navbar>
+
+<table id="myTable" class="table table-stripe">
+  <!-- <tr> <th>ShopName</th></tr> -->
+  <tr *ngFor = "let cart of cartDetails">
+  <td> <h3><strong> {{cart.shopName}} </strong> </h3> 
+
+    <!-- <tr> <th>Products</th></tr> -->
+    <tr *ngFor = "let f of cart.productCommodity">
+      <td>
+        {{f.name}} @ {{f.price}} each<br> <br>
+        Quantity: {{f.quantity}} 
+        &nbsp;
+        <button mdbBtn type="button" (click)="onIncreaseQuantity(f)" color="success" rounded="true" outline="true"
+            class="waves-light fa fa-plus" mdbWavesEffect></button>
+        &nbsp;
+        <button mdbBtn type="button" (click)="onDecreaseQuantity(f)" color="success" rounded="true" outline="true"
+            class="waves-light fa fa-minus" mdbWavesEffect></button>
+        <br><br>
+        Subtotal: {{f.price * f.quantity}} <br><br>
+        
+        <button mdbBtn type="button" (click)="onClearItem(f)" color="primary" rounded="true" outline="true"
+        class="waves-light noprint" mdbWavesEffect>Clear Item</button>
+        <br>
+        <br>
+
+      </td>
+    </tr>
+
+    <h3><strong> {{cart.shopName}}'s Total: {{cart.shopTotal}} </strong></h3>
+
+    
+    <br>
+
+  </td>
+</tr>
+</table>
+
+<div *ngIf="cartDetails">
+      <button mdbBtn type="button" (click)="onClearCart()" color="primary" rounded="true" outline="true"
+          class="waves-light noprint" mdbWavesEffect>Clear Cart</button>
+
+          <br><br>
+
+      <button mdbBtn type="button" (click)="onCheckOut()" color="success" rounded="true" outline="false"
+          class="waves-light large large-btn solid noprint" mdbWavesEffect>Check Out</button>
+</div>

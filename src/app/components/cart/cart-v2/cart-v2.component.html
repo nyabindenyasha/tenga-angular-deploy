@@ -1,0 +1,43 @@
+<p></p>
+
+<!-- <ul class="list-group">
+    <li class="list-group-item" *ngFor="let cart of cartDetails">
+        {{cart.shopName}} <br> -->
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let cartpr of cartDetails.productCommodity">
+              {{cartpr.name}} <br>
+              @ ZWL {{cartpr.price}} <br>
+              Quantity: {{cart.quantity}}
+              <!-- Quantity: {{cart.quantity}} -->
+              &nbsp;
+              <button mdbBtn type="button" (click)="onIncreaseQuantity(cart)" color="success" rounded="true" outline="true"
+                  class="waves-light fa fa-plus" mdbWavesEffect></button>
+              &nbsp;
+              <button mdbBtn type="button" (click)="onDecreaseQuantity(cart.index)" color="success" rounded="true" outline="true"
+                  class="waves-light fa fa-minus" mdbWavesEffect></button>
+              <br>
+
+              subTotal: 555.60 <br><br>
+              <!-- subTotal: {{cart.price * cart.quantity}} <br><br> -->
+      
+      
+              <button mdbBtn type="button" (click)="onClearItem($event)" color="primary" rounded="true" outline="true"
+                  class="waves-light noprint" mdbWavesEffect>Clear Item</button> <br>
+          </li>
+      </ul>
+    <!-- </li>
+</ul> -->
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <button mdbBtn type="button" (click)="onClearCart($event)" color="primary" rounded="true" outline="true"
+            class="waves-light noprint" mdbWavesEffect>Clear Cart</button>
+    </li>
+
+    <li class="list-group-item">
+        <button mdbBtn type="button" (click)="onCheckOut($event)" color="success" rounded="true" outline="true"
+            class="waves-light noprint" mdbWavesEffect>Check Out</button>
+    </li>
+</ul>
+
+<br><br>
