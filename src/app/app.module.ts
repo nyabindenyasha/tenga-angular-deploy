@@ -77,6 +77,7 @@ import { AlertService, AuthenticationService } from './auth/services';
     OkHomeComponent,
     SparHomeComponent,
     PickNPayHomeComponent,
+    CartComponent,
     CartViewComponent,
     CartV2Component,
     PaymentMethodComponent,
@@ -101,6 +102,7 @@ import { AlertService, AuthenticationService } from './auth/services';
   providers: [
     HttpRequestComponent,
     AuthGuard,
+    CartComponent,
     AlertService,
     AuthenticationService,
   ],
